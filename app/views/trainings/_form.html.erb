@@ -1,0 +1,45 @@
+<%= form_for(@training) do |f| %>
+  <% if @training.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@training.errors.count, "error") %> prohibited this training from being saved:</h2>
+
+      <ul>
+      <% @training.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :id %><br />
+    <%= f.number_field :id %>
+  </div>
+  <div class="field">
+    <%= f.label :bookingid %><br />
+    <%= f.number_field :bookingid %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.text_field :date %>
+  </div>
+  <div class="field">
+    <%= f.label :time %><br />
+    <%= f.text_field :time %>
+  </div>
+  <div class="field">
+    <%= f.label :coursename %><br />
+    <%= f.text_field :coursename %>
+  </div>
+  <div class="field">
+    <%= f.label :coursedescription %><br />
+    <%= f.text_area :coursedescription %>
+  </div>
+  <div class="field">
+    <%= f.label :region %><br />
+    <%= f.text_field :region %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

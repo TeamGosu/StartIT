@@ -1,0 +1,35 @@
+<h1>Listing trainings</h1>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Bookingid</th>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Coursename</th>
+    <th>Coursedescription</th>
+    <th>Region</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @trainings.each do |training| %>
+  <tr>
+    <td><%= training.id %></td>
+    <td><%= training.bookingid %></td>
+    <td><%= training.date %></td>
+    <td><%= training.time %></td>
+    <td><%= training.coursename %></td>
+    <td><%= training.coursedescription %></td>
+    <td><%= training.region %></td>
+    <td><%= link_to 'Show', training %></td>
+    <td><%= link_to 'Edit', edit_training_path(training) %></td>
+    <td><%= link_to 'Destroy', training, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Training', new_training_path %>

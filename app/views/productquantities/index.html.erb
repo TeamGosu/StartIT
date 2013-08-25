@@ -1,0 +1,27 @@
+<h1>Listing productquantities</h1>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Purchasesid</th>
+    <th>Quantity</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @productquantities.each do |productquantity| %>
+  <tr>
+    <td><%= productquantity.id %></td>
+    <td><%= productquantity.purchasesid %></td>
+    <td><%= productquantity.quantity %></td>
+    <td><%= link_to 'Show', productquantity %></td>
+    <td><%= link_to 'Edit', edit_productquantity_path(productquantity) %></td>
+    <td><%= link_to 'Destroy', productquantity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Productquantity', new_productquantity_path %>

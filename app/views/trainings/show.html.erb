@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Id:</b>
+  <%= @training.id %>
+</p>
+
+<p>
+  <b>Bookingid:</b>
+  <%= @training.bookingid %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @training.date %>
+</p>
+
+<p>
+  <b>Time:</b>
+  <%= @training.time %>
+</p>
+
+<p>
+  <b>Coursename:</b>
+  <%= @training.coursename %>
+</p>
+
+<p>
+  <b>Coursedescription:</b>
+  <%= @training.coursedescription %>
+</p>
+
+<p>
+  <b>Region:</b>
+  <%= @training.region %>
+</p>
+
+
+<%= link_to 'Edit', edit_training_path(@training) %> |
+<%= link_to 'Back', trainings_path %>
