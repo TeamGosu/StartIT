@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: 1
+  bookingid: 1
+  date: MyString
+  time: MyString
+  coursename: MyString
+  coursedescription: MyText
+  region: MyString
+
+two:
+  id: 1
+  bookingid: 1
+  date: MyString
+  time: MyString
+  coursename: MyString
+  coursedescription: MyText
+  region: MyString

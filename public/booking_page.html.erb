@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+
+<head>
+<link rel="stylesheets" type="text/css" href="C:\RailsInstaller\DevKit\home\jc233013\StartIT\app\assets\stylesheets\indexStyle.css">
+<title>StartIT Page</title>
+<script language="JavaScript1.1">
+<!--
+var image1=new Image()
+image1.src="images/pic1.jpg"
+var image2=new Image()
+image2.src="images/pic2.jpg"
+var image3=new Image()
+image3.src="images/pic3.jpg"
+//-->
+</script
+</head>
+
+<body>
+
+<div class="top">
+<strong>Dont use these services?</strong>
+  <%= link_to "Create an account", "/auth/identity/register" %> or
+  <%= link_to "login", "/auth/identity" %> with a password.
+  <p>
+  <% if current_user %>
+    Signed in as <strong><%= current_user.name %></strong>!
+    <%= link_to "Sign out", signout_path, id: "sign_out" %>
+  <% else %>
+    <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+  <% end %></p>
+<iframe src="https://www.facebook.com/plugins/like.php?href=http://www.facebook.com/pages/Start-It/164272490294192?fref=ts"
+                    scrolling="no" frameborder="0"
+                    style="border:none; width:450px; height:80px"></iframe></div>
+
+
+<div id="carousel"><img name="slide" width=918 height=400>
+<script>
+<!--
+//variable that will increment through the images
+var step=1
+function slideit(){
+//if browser does not support the image object, exit.
+if (!document.images)
+return
+document.images.slide.src=eval("image"+step+".src")
+if (step<3)
+step++
+else
+step=1
+//call function "slideit()" every 2.5 seconds
+setTimeout("slideit()",2500)
+}
+slideit()
+//-->
+</script>
+</div>
+
+<div class="buttonGroup">
+
+<a class="button" href="http://localhost:3000/users" onclick="this.blur);"><span>USERS</span></a>
+
+<a class="button" href="http://localhost:3000/users" onclick="this.blur);"><span>ABOUT US</span></a>
+
+<a class="button" href="http://localhost:3000/users" onclick="this.blur);"><span>OUR SERVICES</span></a>
+
+<a class="button" href="http://localhost:3000/users" onclick="this.blur);"><span>BOOK NOW</span></a>
+
+<a class="button" href="http://localhost:3000/users" onclick="this.blur);"><span>CONTACT US</span></a>
+</div>
+
+
+
+</TABLE>  
+<p>
+
+<div id="user_nav">
+  
+</div>
+
+<div id='calendar'>
+<%= calendar_for(@tasks) do |t| %>
+  <%= t.head('mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun') %>
+  <%= t.day do |day, tasks| %>
+    <%= day.day %>
+    <% tasks.each do |task| %>
+      <%= h(task.name) %>
+    <% end %>
+  <% end %>
+<% end %>
+</div>
+
+</body>
+</html>
