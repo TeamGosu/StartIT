@@ -35,6 +35,17 @@
   <%= @customer.email %>
 </p>
 
+<p>
+  <b>Created At:</b>
+  <%= @customer.created_at %>
+</p>
+
+<a href="<%= @customer.pic.url %> ">
+  <b> File attached </b></a>
+<br/>
+
+<%= image_tag @customer.pic.url %>
+<br/>
 
 <%= link_to 'Edit', edit_customer_path(@customer) %> |
 <%= link_to 'Back', customers_path %>

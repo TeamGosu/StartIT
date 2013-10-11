@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130527040104) do
+ActiveRecord::Schema.define(:version => 20131011015319) do
 
   create_table "bookings", :force => true do |t|
     t.integer  "customerid"
@@ -27,8 +27,12 @@ ActiveRecord::Schema.define(:version => 20130527040104) do
     t.string   "workphone"
     t.string   "mobilephone"
     t.string   "email"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.string   "pic_file_name"
+    t.string   "pic_content_type"
+    t.integer  "pic_file_size"
+    t.datetime "pic_updated_at"
   end
 
   create_table "fbusers", :force => true do |t|
@@ -88,6 +92,11 @@ ActiveRecord::Schema.define(:version => 20130527040104) do
     t.string   "region"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
+  end
+
+  create_table "userbookings", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|

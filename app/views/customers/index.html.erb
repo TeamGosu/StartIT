@@ -9,6 +9,7 @@
     <th>Workphone</th>
     <th>Mobilephone</th>
     <th>Email</th>
+    <th>Created At</th>
     <th></th>
     <th></th>
     <th></th>
@@ -23,6 +24,7 @@
     <td><%= customer.workphone %></td>
     <td><%= customer.mobilephone %></td>
     <td><%= customer.email %></td>
+    <td><%= customer.created_at %></td>
     <td><%= link_to 'Show', customer %></td>
     <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
     <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
